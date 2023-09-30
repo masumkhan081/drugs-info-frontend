@@ -1,16 +1,60 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rubik+Iso&family=Titan+One&display=swap"); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(80, 8, 8, 0.87);
-  background-color: #e2d2d2;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  background-color: #dcfce7;
 }
 
-
+.btn_nav {
+  @apply flex items-center flex-wrap overflow-hidden gap-1 bg-green-50 text-green-700 text-center px-1 py-1 rounded-md bg-gradient-to-b from-green-200 text-sm font-averia;
+}
+.nav_icn {
+  @apply w-1.25 h-1.25 text-green-900;
+}
+.brand {
+  @apply text-1.25/1.5 text-green-900 flex items-center gap-1;
+}
+.orange_title {
+  @apply flex justify-between btn_auth_toggler  w-2/3 mx-auto pt-1 pb-0 shadow-md;
+}
+.neutral_title {
+  @apply flex justify-center text-lg text-orange-800 font-titan w-2/3 mx-auto pt-1 pb-0 drop-shadow-md font-semibold;
+}
+.txt_inp_form {
+  @apply border border-br/300 font-averia outline-none rounded-md px-4 py-1;
+}
+.nav_drop_down {
+  @apply block absolute z-50 top-[40px] left-[48px] right-[48px] h-auto border rounded-md bg-green-200 border-yellow-600;
+}
+.lbl_form {
+  @apply font-medium font-averia;
+}
+.title_auth_form {
+  @apply text-sm font-averia font-normal tracking-02 text-center;
+}
+.btn_auth_toggler {
+  @apply bg-orange-600 text-orange-200 text-center px-3 rounded-md bg-gradient-to-b from-orange-900 text-sm font-averia tracking-02;
+}
+.btn_auth_option {
+  @apply border border-teal-600 md:w-3/5 w-full rounded-md shadow-sm py-1 text-center;
+}
+.btn_auth_submit {
+  @apply border border-br/600 text-teal-950 rounded-md px-3 py-1 text-lg w-1/2 font-rubik font-normal tracking-02;
+}
+.btn_test_data {
+  @apply border border-br/300 drop-shadow-sm text-teal-950 rounded-md px-2 py-1 text-lg w-fit mr-auto font-rubik font-normal tracking-02;
+}
+.trans_eio {
+  @apply transition duration-700 ease-in-out;
+}
+.icn_sm {
+  @apply w-1.5 h-1.5 inline mr-1;
+}
+.icn_xm {
+  @apply w-1.125 h-1.125 inline mr-1;
+}
