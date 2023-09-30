@@ -18,13 +18,7 @@ export default function Nav() {
   const navigate = useNavigate();
 
   const navLinks = [
-    // {
-    //   text: "About",
-    //   icon: <BsInfoCircle className="nav_icn"/>,
-    //   click: () => {
-    //     navigate("/about");
-    //   },
-    // },
+     
     {
       text: "Other Projects",
       icon: <BsListNested className="nav_icn" />,

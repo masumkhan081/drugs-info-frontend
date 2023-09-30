@@ -13,9 +13,11 @@ export default function ({ onClose }) {
       >
         <Button
           style={"ml-auto"}
-          icon=<AiOutlineClose className="w-1.25 h-1.25 text-orange-800 mb-0.125" />
+          icon={
+            <AiOutlineClose className="w-1.25 h-1.25 text-orange-800 mb-0.125" />
+          }
           onClick={() => onClose()}
-        ></Button>
+        />
       </Title>
 
       <div className="flex sm:flex-row flex-col">
