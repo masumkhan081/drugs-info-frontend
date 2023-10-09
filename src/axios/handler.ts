@@ -30,11 +30,7 @@ export const getHandler = async (endpoint) => {
 
 export const patchHandler = async (endpoint, data) => {
   try {
-    const response = await axios.patch(
-      `${BASE_URL + endpoint}`,
-      data,
-      config
-    );
+    const response = await axios.patch(`${BASE_URL + endpoint}`, data, config);
 
     return response;
   } catch (err) {

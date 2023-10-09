@@ -3,7 +3,7 @@ import google from "../assets/icons/google.svg";
 import facebook from "../assets/icons/facebook.svg";
 import github from "../assets/icons/github.svg";
 import linkedin from "../assets/icons/linkedin2.svg";
-import Title from "../sharedUI/Title";
+import Title from "../common-ui/Title";
 import dotenv from "dotenv";
 
 export default function AuthOptions() {

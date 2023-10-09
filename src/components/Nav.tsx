@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 import menu from "../assets/icons/menu.svg";
 import close from "../assets/icons/close.svg";
-import CustomLink from "../sharedUI/CustomLink";
-import Button from "../sharedUI/Button";
+import CustomLink from "../common-ui/CustomLink";
+import Button from "../common-ui/Button";
 import ProjectList from "./ProjectList";
 import { BsInfoCircle, BsList, BsListNested, BsInfoLg } from "react-icons/bs";
 import { BiSolidUserPlus, BiUserPlus, BiLogInCircle } from "react-icons/bi";
@@ -18,6 +18,13 @@ export default function Nav() {
   const navigate = useNavigate();
 
   const navLinks = [
+    {
+      text: "About",
+      icon: <BsInfoCircle className="nav_icn" />,
+      click: () => {
+        navigate("/about");
+      },
+    },
      
     {
       text: "Other Projects",

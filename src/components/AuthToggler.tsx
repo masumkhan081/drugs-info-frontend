@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../sharedUI/Button";
+import Button from "../common-ui/Button";
 
 export default function AuthToggler({ loginView, toggle }) {
  

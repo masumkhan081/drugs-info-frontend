@@ -44,10 +44,10 @@
   @apply border border-teal-600 md:w-3/5 w-full rounded-md shadow-sm py-1 text-center;
 }
 .btn_auth_submit {
-  @apply border border-br/600 text-teal-950 rounded-md px-3 py-1 text-lg w-1/2 font-rubik font-normal tracking-02;
+  @apply border border-br/600 text-teal-950 rounded-md px-3 max-h-[28px] py-1 text-lg w-1/2 font-rubik font-normal tracking-02;
 }
 .btn_test_data {
-  @apply border border-br/300 drop-shadow-sm text-teal-950 rounded-md px-2 py-1 text-lg w-fit mr-auto font-rubik font-normal tracking-02;
+  @apply border border-br/300 drop-shadow-sm text-teal-950 rounded-md px-2 py-0.125 text-sm w-fit font-averia font-normal tracking-tight;
 }
 .trans_eio {
   @apply transition duration-700 ease-in-out;

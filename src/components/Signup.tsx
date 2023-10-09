@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Input from "../sharedUI/Input";
-import Label from "../sharedUI/Label";
+import Input from "../common-ui/Input";
+import Label from "../common-ui/Label";
 // data
 import countryDials from "../static-data/country_dial_info.json";
 //  icons

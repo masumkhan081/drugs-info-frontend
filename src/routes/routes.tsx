@@ -9,6 +9,7 @@ import Recovery from "../components/Recovery.jsx";
 import About from "../pages/About.jsx";
 import Auth from "../pages/Auth.jsx";
 import AuthForms from "../components/AuthForms.jsx";
+import Home from "../pages/Home.tsx";
 
 export const routes = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: "",
+        element: <Home />,
+      },
+      {
+        path: "about",
         element: <About />,
       },
       {

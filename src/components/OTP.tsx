@@ -1,5 +1,5 @@
 import React from "react";
-import Label from "../sharedUI/Label";
+import Label from "../common-ui/Label";
 import { postHandler } from "../axios/handler";
 
 export default function OTP() {
