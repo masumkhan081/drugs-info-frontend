@@ -7,7 +7,7 @@ import {
   setCurrentView,
 } from "../../redux/slices/StaffView";
 
-export default function AttendanceTbl({}) {
+export default function AttendanceTbl({ }) {
   //
 
   return (

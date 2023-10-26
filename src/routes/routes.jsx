@@ -22,7 +22,7 @@ import GenericTbl from "../components/tabularViews/GenericTbl";
 import UnitTbl from "../components/tabularViews/UnitTbl";
 import MFRTbl from "../components/tabularViews/MFRTbl";
 import StaffTbl from "../components/tabularViews/StaffTbl.jsx";
-import AttendanceTbl from "../components/tabularViews/attendanceTbl.jsx";
+import AttendanceTbl from "../components/tabularViews/AttendanceTbl.jsx";
 import SalaryTbl from "../components/tabularViews/SalaryTbl.jsx";
 // 
 export const routes = createBrowserRouter([
