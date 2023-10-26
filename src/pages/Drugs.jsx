@@ -3,13 +3,17 @@ import Button from "../common-ui/Button";
 import PageTitle from "../common-ui/PageTitle";
 import ViewFilterDrugs from "../components/tabularViews/ViewFilterDrugs";
 import SearchFilter from "../components/SearchFilter";
-import { AiOutlinePlus } from "react-icons/ai"; 
- 
+import { AiOutlinePlus } from "react-icons/ai";
+
 //
-import { Outlet } from "react-router-dom"; 
+import { Outlet } from "react-router-dom";
+import { useState } from "react";
 
 export default function Drugs() {
   //
+
+  const [dropDown, setDropDown] = useState(false);
+  const [menuFolded, setMenuFolded] = useState(true);
 
   const currentView = useSelector((state) => state.currentView);
 
@@ -23,9 +27,14 @@ export default function Drugs() {
           <Button
             icon={<AiOutlinePlus className="inline text-red-700" />}
             txt={` ${currentView}`}
-            onClick={() => {}}
+            onClick={() => { setDropDown(!dropDown) }}
             style={`btn_test_data`}
           />
+        </div>
+        <div className={dropDown ? "nav_drop_down" : `hidden`}>
+          <div className="text-4xl font-extrabold text-red-800">
+            hi hello
+          </div>
         </div>
       </div>
       <SearchFilter />

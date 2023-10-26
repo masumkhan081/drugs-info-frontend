@@ -14,6 +14,10 @@
   background-color: #dcfce7;
 }
 
+
+.nav_drop_down {
+  @apply block absolute z-10 top-[40px] left-[48px] right-[48px] h-auto border rounded-md bg-green-200 border-yellow-600;
+}
 .btn_nav {
   @apply flex items-center flex-wrap overflow-hidden gap-1 bg-green-50 text-green-700 text-center px-1 py-1 rounded-md bg-gradient-to-b from-green-200 text-sm font-averia;
 }
