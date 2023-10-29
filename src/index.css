@@ -16,7 +16,7 @@
 
 
 .nav_drop_down {
-  @apply block absolute z-10 top-[40px] left-[48px] right-[48px] h-auto border rounded-md bg-green-200 border-yellow-600;
+  @apply block absolute z-10 w-full sm:mx-12 md:w-1/2 h-auto border rounded-md bg-green-200 border-yellow-600;
 }
 .btn_nav {
   @apply flex items-center flex-wrap overflow-hidden gap-1 bg-green-50 text-green-700 text-center px-1 py-1 rounded-md bg-gradient-to-b from-green-200 text-sm font-averia;
@@ -35,9 +35,6 @@
 }
 .txt_inp_form {
   @apply flex justify-between border border-br/300 font-averia outline-none rounded-md px-4 py-1;
-}
-.nav_drop_down {
-  @apply block absolute z-50 top-[40px] left-[48px] right-[48px] h-auto border rounded-md bg-green-200 border-yellow-600;
 }
 .lbl_form {
   @apply font-medium font-averia;

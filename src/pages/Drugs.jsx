@@ -8,6 +8,13 @@ import { AiOutlinePlus } from "react-icons/ai";
 //
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
+import DrugForm from "../components/drugs/DrugForm";
+import MFRForm from "../components/drugs/MFRForm";
+import UnitForm from "../components/drugs/UnitForm";
+import GroupForm from "../components/drugs/GroupForm";
+import GenericForm from "../components/drugs/GenericForm";
+import BrandForm from "../components/drugs/BrandForm";
+import FormulationForm from "../components/drugs/FormulationForm";
 
 export default function Drugs() {
   //
@@ -15,7 +22,7 @@ export default function Drugs() {
   const [dropDown, setDropDown] = useState(false);
   const [menuFolded, setMenuFolded] = useState(true);
 
-  const currentView = useSelector((state) => state.currentView);
+  const currentView = useSelector((state) => state.drugsView.currentView);
 
   return (
     <div className="w-full  flex flex-col gap-1.5 md:px-0.38 pt-1.5">
@@ -32,9 +39,13 @@ export default function Drugs() {
           />
         </div>
         <div className={dropDown ? "nav_drop_down" : `hidden`}>
-          <div className="text-4xl font-extrabold text-red-800">
-            hi hello
-          </div>
+          {currentView == "brands" && <BrandForm visible={dropDown} setDropDown={setDropDown} />}
+          {currentView == "drugs" && <DrugForm visible={dropDown} setDropDown={setDropDown} />}
+          {currentView == "formulations" && <FormulationForm visible={dropDown} setDropDown={setDropDown} />}
+          {currentView == "generics" && <GenericForm visible={dropDown} setDropDown={setDropDown} />}
+          {currentView == "groups" && <GroupForm visible={dropDown} setDropDown={setDropDown} />}
+          {currentView == "units" && <UnitForm visible={dropDown} setDropDown={setDropDown} />}
+          {currentView == "manufacturers" && <MFRForm visible={dropDown} setDropDown={setDropDown} />}
         </div>
       </div>
       <SearchFilter />
