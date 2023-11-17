@@ -9,10 +9,11 @@ import { useState } from "react";
 export default function UnitForm({ visible, setDropDown }) {
   //
   const dispatch = useDispatch();
-  const [name, setName] = useState("")
-  // 
+  const isModalForEdit = useSelector((state) => state.drugsView.isModalForEdit)
+  const modalData = useSelector((state) => state.drugsView.modalData)
   const units = useSelector((state) => state.drugsView.units);
-  //  
+  const [name, setName] = useState(isModalForEdit == true ? modalData.name : "")
+  //   
   async function handleSave() {
     const response = postHandler("/units", { name })
     console.log("resp: - units-- ", JSON.stringify(response));
@@ -35,7 +36,7 @@ export default function UnitForm({ visible, setDropDown }) {
 
       <div className=' flex flex-col'>
         <label>Existing Units</label>
-        <select  >
+        <select>
           {units && units?.map((unit, ind) => {
             return <option key={ind}  >{unit.name}</option>
           })}

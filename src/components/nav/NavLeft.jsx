@@ -7,17 +7,19 @@ import {
   useLocation,
 } from "react-router-dom";
 import navMap from '../../static-data/left-nav'
+import { AiFillCaretRight } from 'react-icons/ai'
 
 export default function NavLeft() {
 
   const [expansion, setExpansion] = useState({
-    Drugs: "block",
+    Drugs: "hidden",
     Staff: "hidden"
   })
   function setView(ofWhat) {
     expansion[ofWhat] == "block" ? setExpansion({ ...expansion, [ofWhat]: "hidden" }) :
       setExpansion({ ...expansion, [ofWhat]: "block" })
   }
+  const isExtpanded = (what) => expansion[what] == "block" ? true : false
   // 
   const user = {
     name: "some khan",
@@ -50,21 +52,24 @@ export default function NavLeft() {
   const cmn_sty =
     "rounded-md font-inter text-1/1.5 py-0.5 px-0.75 h-full w-full ml-1";
   return (
-    <ul className="col-span-1 h-full flex flex-col gap-4 pt-8 px-2 border ">
+    <ul className="col-span-1 h-full flex flex-col gap-3 pt-6 px-2 border ">
+
       {navMap
         .filter((Pok) => Pok.access.includes(user.role))
         .map((navItem, ind) => {
           return (
-            <li className="flex flex-col  w-full " key={ind}>
-              <NavLink to={navItem.to} onClick={() => setView(navItem.text)}>
-                <span>{navItem.text}</span>
+            <li className="flex flex-col w-full  " key={ind}>
+              <NavLink to={navItem.to} onClick={() => setView(navItem.text)}
+                className="bg-green-100 w-full flex justify-between items-center rounded-md border border-slate-500 px-2 py-0.25">
+                <span >{navItem.text}</span>
+                {navItem.sub && <AiFillCaretRight className={isExtpanded(navItem.text) ? "rotate-90" : "rotate-0"} />}
               </NavLink>
 
               {navItem.sub && (
-                <ul className={`ms-2 border-2 w-full  ${expansion[navItem.text]}`}>
+                <ul className={` py-1 space-y-1 w-full  ${expansion[navItem.text]}`}>
                   {navItem.options.map((item, index) => {
                     return (
-                      <li key={index}>
+                      <li key={index} className="text-center text-sm rounded-md border border-slate-200 py-0.125">
                         <NavLink to={item.to}>
                           <span>{item.text}</span>
                         </NavLink>

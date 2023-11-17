@@ -1,5 +1,14 @@
 const navMap = [
    {
+      to: "/sale-panel",
+      text: "Sale Panel",
+      access: ["pharmacist", "", ""],
+   }, {
+      to: "/dashboard",
+      text: "Dashboard",
+      access: ["pharmacist", "", ""],
+   },
+   {
       to: "/drugs/stock",
       text: "Drugs",
       sub: true,

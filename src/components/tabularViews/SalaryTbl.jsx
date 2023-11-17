@@ -23,8 +23,8 @@ export default function SalariesTbl() {
   }, []);
   //
   return (
-    <div className="">
-      <table className="w-full overflow-x-auto border-2">
+    <div className="w-full border rounded-md border-slate-200 overflow-x-scroll">
+    <table className="w-full ">
         <thead>
           <tr className="tr_thead">
             <th className="th">
@@ -45,9 +45,9 @@ export default function SalariesTbl() {
         </thead>
 
         <tbody>
-          {salaries?.map((item, ind) => {
+          {salaries && salaries?.map((item, ind) => {
             return (
-              <tr key={item.id} className="tr_tbody">
+              <tr key={item._id} className="tr_tbody">
                 <td className="td">
                   <input
                     type="checkbox"

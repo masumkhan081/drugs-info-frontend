@@ -1,5 +1,21 @@
 # React + TypeScript + Vite
 
+
+to-do:
+populate
+add action to all tbl
+search and view filter
+view bottom
+drugs in stock view (per brand expndable) ans new sale appears different
+drugs form -> how to add in stock
+search and show reult as suggesstion 
+add purchase
+add new sale
+several dummy account and check protected route
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

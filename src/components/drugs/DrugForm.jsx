@@ -7,15 +7,21 @@ import { useState } from 'react';
 export default function DrugForm({ visible, setDropDown }) {
   //
   const dispatch = useDispatch();
-  const [selectedGroup, setSelectedGroup] = useState("select-one")
-  const [selectedGeneric, setSelectedGeneric] = useState("select-one")
-  const [name, setName] = useState("")
-  const [selectedMFR, setSelectedMFR] = useState("select-one")
 
-  // 
+
+  const isModalForEdit = useSelector((state) => state.drugsView.isModalForEdit)
+  const modalData = useSelector((state) => state.drugsView.modalData)
+  const formulations = useSelector((state) => state.drugsView.formulations);
   const groups = useSelector((state) => state.drugsView.groups);
   const generics = useSelector((state) => state.drugsView.generics);
   const manufacturers = useSelector((state) => state.drugsView.manufacturers);
+
+  const [name, setName] = useState(isModalForEdit == true ? modalData.name : "")
+  const [selectedGroup, setSelectedGroup] = useState("select-one")
+  const [selectedGeneric, setSelectedGeneric] = useState("select-one")
+
+  const [selectedMFR, setSelectedMFR] = useState("select-one")
+
   //  
 
   useEffect(() => {

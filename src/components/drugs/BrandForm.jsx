@@ -7,10 +7,12 @@ import { useState } from 'react';
 export default function BrandForm({ visible, setDropDown }) {
   //
   const dispatch = useDispatch();
-  const [selectedGroup, setSelectedGroup] = useState("select-one")
-  const [selectedGeneric, setSelectedGeneric] = useState("select-one")
-  const [name, setName] = useState("")
-  const [selectedMFR, setSelectedMFR] = useState("select-one")
+  const isModalForEdit = useSelector((state) => state.drugsView.isModalForEdit)
+  const modalData = useSelector((state) => state.drugsView.modalData)
+  const [selectedGroup, setSelectedGroup] = useState(isModalForEdit == true ? modalData.grpId : "select-one")
+  const [selectedGeneric, setSelectedGeneric] = useState(isModalForEdit == true ? modalData.genId : "select-one")
+  const [name, setName] = useState(isModalForEdit == true ? modalData.name : "")
+  const [selectedMFR, setSelectedMFR] = useState(isModalForEdit == true ? modalData.mfrId : "")
 
   // 
   const groups = useSelector((state) => state.drugsView.groups);
@@ -39,7 +41,7 @@ export default function BrandForm({ visible, setDropDown }) {
       data = await getHandler("/manufacturers/all");
       dispatch(setManufacturers({ data: data?.data?.manufacturers }));
     };
-    fetch();
+    visible?fetch():null;
   }, []);
 
   return (

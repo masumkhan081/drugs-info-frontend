@@ -7,10 +7,11 @@ import { useState } from 'react';
 export default function FormulationForm({ visible, setDropDown }) {
   //
   const dispatch = useDispatch();
-  const [name, setName] = useState("")
-  // 
+  const isModalForEdit = useSelector((state) => state.drugsView.isModalForEdit)
+  const modalData = useSelector((state) => state.drugsView.modalData)
   const formulations = useSelector((state) => state.drugsView.formulations);
-  //  
+  const [name, setName] = useState(isModalForEdit == true ? modalData.name : "")
+  // 
   useEffect(() => {
     const fetch = async () => {
       const data = await getHandler("/formulations/all");

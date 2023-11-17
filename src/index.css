@@ -11,15 +11,15 @@
   font-family: Inter;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #dcfce7;
+  
 }
 
 
 .nav_drop_down {
-  @apply block absolute z-10 w-full sm:mx-12 md:w-1/2 h-auto border rounded-md bg-green-200 border-yellow-600;
+  @apply block absolute z-20 w-full sm:mx-12 md:w-1/2 h-auto border rounded-md border-yellow-600;
 }
 .btn_nav {
-  @apply flex items-center flex-wrap overflow-hidden gap-1 bg-green-50 text-green-700 text-center px-1 py-1 rounded-md bg-gradient-to-b from-green-200 text-sm font-averia;
+  @apply flex items-center flex-wrap overflow-hidden gap-1   text-green-700 text-center px-1 py-1 rounded-md bg-gradient-to-b from-green-200 text-sm font-averia;
 }
 .nav_icn {
   @apply w-1.25 h-1.25 text-green-900;
@@ -62,4 +62,16 @@
 }
 .icn_xm {
   @apply w-1.125 h-1.125 inline mr-1;
+}
+.tr_tbody {
+  @apply text-black py-1.125 font-normal text-0.9/1.25 text-center  capitalize border;
+}
+.tr_thead {
+  @apply text-sl/600 font-medium text-0.75/1 capitalize;
+}
+.th {
+  @apply px-0.25 py-0.62;
+}
+.td {
+  @apply px-0.25 py-1.125;
 }

@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react'
-import { setGroups, setGenerics, setManufacturers } from '../../redux/slices/DrugsView'
-import { getHandler } from '../../util/handler'
+import { closeModal, setManufacturers } from '../../redux/slices/DrugsView'
+import { getHandler, postHandler, patchHandler } from '../../util/handler'
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
-export default function MFRForm({ visible, setDropDown }) {
+export default function MFRForm() {
   //
   const dispatch = useDispatch();
-  const [name, setName] = useState("")
-  // 
+  const isModalForEdit = useSelector((state) => state.drugsView.isModalForEdit)
+  const modalData = useSelector((state) => state.drugsView.modalData)
   const manufacturers = useSelector((state) => state.drugsView.manufacturers);
+  const [name, setName] = useState(isModalForEdit == true ? modalData.name : "")
+  // 
+
   //  
   async function handleSave(e) {
     e.preventDefault();
@@ -29,8 +32,9 @@ export default function MFRForm({ visible, setDropDown }) {
     <div className="flex flex-col ">
 
       <div className='flex justify-end'>
-        <button onClick={() => setDropDown(!visible)}>Close</button>
+        <button onClick={() => dispatch(closeModal({ isModalVisible: false }))}>Close</button>
       </div>
+      <span>{JSON.stringify(isModalForEdit)}</span>
       <div className=' flex flex-col'>
         <label>Existing Manufacturers</label>
         <select  >

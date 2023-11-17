@@ -1,16 +1,16 @@
 import React from 'react'
 import Input from '../common-ui/Input'
+import Button from '../common-ui/Button'
 
-export default function SearchFilter({searchContent,setSearchContent}) {
+export default function SearchFilter({ searchContent, setSearchContent }) {
   return (
-    <div className='py-1.5 bg-sl/400'>
-      SearchFilter .......  
-       <Input
+    <div className='py-0.125 flex gap-2'>
+      <Input
         type={"text"}
         value={searchContent}
         style="border"
         onChange={(e) => setSearchContent(e.target.value)}
-      />
+      /><Button txt="Search"></Button>
     </div>
   )
 }

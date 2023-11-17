@@ -8,8 +8,8 @@ const tblOptionsDrugsPage = [
   "manufacturers",
 ];
 
-const tblOptionsStaffPage=[
-  "members","salaries","attendance"
+const tblOptionsStaffPage = [
+  "members", "salaries", "attendance"
 ]
 
 const tblHeaderDrugs = [
@@ -22,13 +22,13 @@ const tblHeaderDrugs = [
   "Manufacturer",
 ];
 
-const tblHeaderBrands = ["Name", "Generic", "Group", "Manufacturer"];
-const tblHeaderGenerics = ["Serial","Generic Name", "Group"];
-const tblHeadergroups = ["Serial","Group Name"];
-const tblHeaderFormulations = ["Full Name", "Short Name"];
-const tblHeaderMfrs = ["Serial","Name"];
-const tblHeaderUnits = ["Serial","Name"];
-const tblHeaderStaff = ["Name", "Role"];
+const tblHeaderBrands = ["#","Name", "Generic", "Group", "Manufacturer"];
+const tblHeaderGenerics = ["Serial", "Generic Name", "Group"];
+const tblHeadergroups = ["Serial", "Group Name"];
+const tblHeaderFormulations = ["#", "Full Name", "Short Name"];
+const tblHeaderMfrs = ["Serial", "Name"];
+const tblHeaderUnits = ["Serial", "Name"];
+const tblHeaderStaff = ["Serial", "Name", "Role"];
 const tblHeaderSales = ["Date Time", "Bill", "Action"];
 const tblHeaderSalaries = ["Paid To", "Month-Year", "Payment Date", "Amount"];
 const tblHeaderPurch = ["Date Time", "Bill", "Action"];

@@ -7,12 +7,12 @@ import { useState } from 'react';
 export default function GenericForm({ visible, setDropDown }) {
   //
   const dispatch = useDispatch();
-  const [selectedGroup, setSelectedGroup] = useState("select-one")
-  const [name, setName] = useState("")
-
-  // 
+  const isModalForEdit = useSelector((state) => state.drugsView.isModalForEdit)
+  const modalData = useSelector((state) => state.drugsView.modalData)
   const groups = useSelector((state) => state.drugsView.groups);
   const generics = useSelector((state) => state.drugsView.generics);
+  const [selectedGroup, setSelectedGroup] = useState(isModalForEdit == true ? modalData.groupId: "")
+  const [name, setName] = useState(isModalForEdit == true ? modalData.name : "")
   //  
 
   async function handleSubmit(e) {

@@ -40,3 +40,12 @@ export const patchHandler = async (endpoint, data) => {
     return err;
   }
 };
+
+export const deleteHandler = async (endpoint) => {
+  try {
+    const response = await axios.get(`${BASE_URL + endpoint}`, config);
+    return response;
+  } catch (err) {
+    return err;
+  }
+};

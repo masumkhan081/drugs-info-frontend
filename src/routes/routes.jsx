@@ -24,6 +24,8 @@ import MFRTbl from "../components/tabularViews/MFRTbl";
 import StaffTbl from "../components/tabularViews/StaffTbl.jsx";
 import AttendanceTbl from "../components/tabularViews/AttendanceTbl.jsx";
 import SalaryTbl from "../components/tabularViews/SalaryTbl.jsx";
+import Dashboard from "../pages/Dashboard.jsx";
+import SalePanel from "../pages/SalePanel.jsx";
 // 
 export const routes = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ export const routes = createBrowserRouter([
         path: "",
         element: <Landing />,
         children: [
+          {
+            path: "dashboard",
+            element: < Dashboard />,
+          },
+          {
+            path: "sale-panel",
+            element: <SalePanel />,
+          },
           {
             path: "drugs/",
             element: <Drugs />,

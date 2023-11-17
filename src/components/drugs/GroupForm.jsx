@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
 export default function GroupForm({ visible, setDropDown }) {
-  //
-  const dispatch = useDispatch();
-  const [name, setName] = useState("")
-
-  // 
-  const groups = useSelector((state) => state.drugsView.groups);
+   //
+   const dispatch = useDispatch();
+   const isModalForEdit = useSelector((state) => state.drugsView.isModalForEdit)
+   const modalData = useSelector((state) => state.drugsView.modalData)
+   const groups = useSelector((state) => state.drugsView.groups);
+   const [name, setName] = useState(isModalForEdit == true ? modalData.name : "")
   //
   async function handleSave() {
    

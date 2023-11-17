@@ -23,8 +23,8 @@ export default function DrugTbl() {
   }, []);
   //
   return (
-    <div className="">
-      <table className="w-full overflow-x-auto border-2">
+    <div className="w-full border rounded-md border-teal-600 overflow-x-scroll">
+      <table className="w-full ">
         <thead>
           <tr className="tr_thead">
             <th className="th">
@@ -45,7 +45,7 @@ export default function DrugTbl() {
         </thead>
 
         <tbody>
-          {stock.map((item, ind) => {
+          {stock && stock.map((item, ind) => {
             return (
               <tr key={ind} className="tr_tbody">
                 <td className="td">
