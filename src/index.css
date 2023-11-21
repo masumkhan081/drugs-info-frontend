@@ -11,12 +11,10 @@
   font-family: Inter;
   line-height: 1.5;
   font-weight: 400;
-  
 }
 
-
 .nav_drop_down {
-  @apply block absolute z-20 w-full sm:mx-12 md:w-1/2 h-auto border rounded-md border-yellow-600;
+  @apply block absolute z-10 sm:w-1/2 w-full sm:mx-auto mx-2 left-auto right-auto  top-[40px] h-auto border rounded-md bg-green-200 border-yellow-600;
 }
 .btn_nav {
   @apply flex items-center flex-wrap overflow-hidden gap-1   text-green-700 text-center px-1 py-1 rounded-md bg-gradient-to-b from-green-200 text-sm font-averia;
@@ -49,7 +47,7 @@
   @apply border border-teal-600 md:w-3/5 w-full rounded-md shadow-sm py-1 text-center;
 }
 .btn_auth_submit {
-  @apply border border-br/600 text-teal-950 rounded-md px-3  py-0.125 text-lg w-1/2 font-rubik font-normal  ;
+  @apply border border-br/600 text-teal-950 rounded-md px-3  py-0.125 text-lg w-1/2 font-rubik font-normal;
 }
 .btn_test_data {
   @apply border border-br/300 drop-shadow-sm text-teal-950 rounded-md px-2 py-0.125 capitalize text-sm w-fit font-averia font-normal tracking-tight;

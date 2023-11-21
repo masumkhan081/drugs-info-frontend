@@ -16,8 +16,8 @@ export default function DrugTbl() {
   //
   useEffect(() => {
     const fetch = async () => {
-      const data = await getHandler("/stock");
-      dispatch(setCurrentView({ view: "stock", data: data.data.stock }));
+      const data = await getHandler("/drugs");
+      dispatch(setCurrentView({ view: "drugs", data: data.data.stock }));
     };
     fetch();
   }, []);

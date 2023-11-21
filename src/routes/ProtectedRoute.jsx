@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function ProtectedRoute({ children:any, pass:string }) {
+export default function ProtectedRoute({ children, pass }) {
 
     if (pass) {
         return <>{children}</>
     }
     else {
-        return <p>not authorized </p>
+        return <p>not authorized {JSON.stringify(pass)} </p>
     }
 }

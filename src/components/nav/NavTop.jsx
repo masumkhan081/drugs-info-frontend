@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
 import menu from "../../assets/icons/menu.svg";
 import close from "../../assets/icons/close.svg";
 import CustomLink from "../../common-ui/CustomLink";
@@ -13,21 +13,21 @@ import { AiFillHome, AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function NavTop() {
+
   const [dropDown, setDropDown] = useState(false);
   const [menuFolded, setMenuFolded] = useState(true);
   const navigate = useNavigate();
+  const isAuthenticated = useSelector((state) => state.user.authenticated);
 
-  const user = {
-    name: "some khan",
-    email: "blabla@gmail.com",
-    role2: "admin",
-    role: "pharmacist",
-    role3: "manager",
-    role4: "salesman",
-  };
+  function handleLogout() {
+    toAuthForm(false);
+    setMenuFolded(true);
+    Cookies.remove(tokenHeader);
+    getHandler("/auth/logout").then((data) => {
 
-  function toAuthForm(loginView) {
-    navigate("/auth", { state: { loginView } });
+    }).catch((err) => {
+
+    });
   }
 
   const styLogic = () =>
@@ -49,36 +49,23 @@ export default function NavTop() {
           icon={<BsListNested className="nav_icn" />}
           style={"btn_nav"}
         />
-        {!user && (
+        {!isAuthenticated && (
           <Button
             onClick={() => {
-              toAuthForm(true);
               setMenuFolded(true);
+              navigate("/auth/login")
             }}
             txt="Log In"
             icon={<BiLogInCircle className="nav_icn" />}
             style={"btn_nav"}
           />
         )}
-        {!user && (
+
+        {isAuthenticated && (
           <Button
-            onClick={() => {
-              toAuthForm(false);
-              setMenuFolded(true);
-            }}
-            txt="Sign Up"
-            icon={<BiUserPlus className="nav_icn" />}
-            style={"btn_nav"}
-          />
-        )}
-        {user && (
-          <Button
-            onClick={() => {
-              toAuthForm(false);
-              setMenuFolded(true);
-              Cookies.remove(tokenHeader);
-              getHandler("/auth/logout");
-            }}
+            onClick={
+              handleLogout
+            }
             txt="Log Out"
             icon={<RiLogoutCircleRLine className="nav_icn" />}
             style={"btn_nav"}

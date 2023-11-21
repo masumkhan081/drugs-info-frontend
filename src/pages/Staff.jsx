@@ -6,10 +6,15 @@ import Button from "../common-ui/Button";
 import SearchFilter from "../components/SearchFilter";
 import { Outlet } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
+import SalaryForm from "../components/staff/SalaryForm";
+import AttendanceForm from "../components/staff/AttendanceForm";
+import MemberForm from "../components/staff/MemberForm";
 
 export default function Staff() {
   //
   const currentView = useSelector((state) => state.staffView.currentView);
+  const isModalVisible = useSelector((state) => state.drugsView.isModalVisible);
+
   //
   return (
     <div className="w-full  flex flex-col gap-1.5 md:px-0.38 pt-1.5">
@@ -17,14 +22,20 @@ export default function Staff() {
       <div className="flex justify-between md:flex-row flex-col gap-3">
         <ViewFilterStaff />
 
-        <div className="flex gap-2">
-          <Button
-            icon={<AiOutlinePlus className="inline text-red-700" />}
-            txt={` ${currentView}`}
-            onClick={() => {}}
-            style={`btn_test_data`}
-          />
+
+        <Button
+          icon={<AiOutlinePlus className="inline text-red-700" />}
+          txt={` ${currentView}`}
+          onClick={() => { dispatch(initModal({ isModalForEdit: false, isModalVisible: true })) }}
+          style={`btn_test_data`}
+        />
+
+        <div className={isModalVisible ? "nav_drop_down" : `hidden`}>
+          {currentView == "salaries" && <SalaryForm />}
+          {currentView == "attendances" && <AttendanceForm />}
+          {currentView == "members" && <MemberForm />}
         </div>
+
       </div>
       <SearchFilter />
       <div>

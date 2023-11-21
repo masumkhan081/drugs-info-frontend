@@ -26,7 +26,17 @@ export default function Login() {
       });
   };
 
-  function setTestData() {
+  function setTestData(role) {
+    if (role === "super-admin") {
+
+    }
+    else if (role === "admin") {
+
+    } else if (role === "manager") {
+
+    } else if (role === "salesman") {
+
+    }
     setUsername("email@gmail.com");
     setPassword("123456");
   }
@@ -41,10 +51,10 @@ export default function Login() {
   }
 
   return (
-    <div className="h-full flex flex-col justify-center ">
+    <div className="container mx-auto h-full flex sm:flex-row flex-col justify-around items-center ">
       <form
         onSubmit={handleSubmit}
-        className="md:w-[600px] w-full flex flex-col gap-6 pt-4 pb-8 px-2 sm:px-4 mx-auto rounded-md shadow-sm drop-shadow-md"
+        className="md:w-1/2 w-full sm:mx-0 mx-6 flex flex-col gap-6 pt-2 pb-8 px-2 sm:px-4  rounded-md shadow-sm drop-shadow-md"
       >
         <div className="flex flex-col gap-1">
           <Label txt="User Name" />
@@ -80,15 +90,32 @@ export default function Login() {
             style=" flex-grow"
           />
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-start">
           <Button txt="Log In" type="submit" style=" btn_auth_submit "></Button>
-          <Button
-            onClick={setTestData}
-            txt=" Test Data"
-            style=" btn_test_data "
-          ></Button>
         </div>
       </form>
+      <div className=" flex flex-col justify-center gap-4">
+        <span className="bg-slate-300 text-sm rounded-md px-1 ">Test Accounts:</span>
+        <Button
+          onClick={() => setTestData("super-admin")}
+          txt="super-admin"
+          style=" btn_test_data "
+        ></Button>
+        <Button
+          onClick={() => setTestData("admin")}
+          txt="admin"
+          style=" btn_test_data "
+        ></Button><Button
+          onClick={() => setTestData("manager")}
+          txt="manager/accountant"
+          style=" btn_test_data "
+        ></Button>
+        <Button
+          onClick={() => setTestData("salesman")}
+          txt="salesman"
+          style=" btn_test_data "
+        ></Button>
+      </div>
     </div>
   );
 }

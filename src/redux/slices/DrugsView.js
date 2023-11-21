@@ -39,6 +39,7 @@ export const drugsViewSlice = createSlice({
       state.isModalForEdit = action.payload.isModalForEdit;
     },
     closeModal: (state, action) => {
+      console.log("action.payload.isModalVisible: ",action.payload.isModalVisible);
       state.isModalVisible = action.payload.isModalVisible;
     },
     setModaldata: (state, action) => {

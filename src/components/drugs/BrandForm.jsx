@@ -8,6 +8,7 @@ export default function BrandForm({ visible, setDropDown }) {
   //
   const dispatch = useDispatch();
   const isModalForEdit = useSelector((state) => state.drugsView.isModalForEdit)
+  const closeModal = useSelector((state) => state.drugsView.closeModal)
   const modalData = useSelector((state) => state.drugsView.modalData)
   const [selectedGroup, setSelectedGroup] = useState(isModalForEdit == true ? modalData.grpId : "select-one")
   const [selectedGeneric, setSelectedGeneric] = useState(isModalForEdit == true ? modalData.genId : "select-one")
@@ -41,14 +42,14 @@ export default function BrandForm({ visible, setDropDown }) {
       data = await getHandler("/manufacturers/all");
       dispatch(setManufacturers({ data: data?.data?.manufacturers }));
     };
-    visible?fetch():null;
+    visible ? fetch() : null;
   }, []);
 
   return (
-    <div className="flex flex-col ">
+    <div className=" flex flex-col ">
 
       <div className='flex justify-end'>
-        <button onClick={() => setDropDown(!visible)}>Close</button>
+        <button onClick={() => { dispatch(closeModal({ isModalVisible: false })) }}>Close</button>
       </div>
 
       <form onSubmit={() => handleSave}>

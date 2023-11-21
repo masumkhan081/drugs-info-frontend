@@ -26,12 +26,12 @@ import AttendanceTbl from "../components/tabularViews/AttendanceTbl.jsx";
 import SalaryTbl from "../components/tabularViews/SalaryTbl.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
 import SalePanel from "../pages/SalePanel.jsx";
+import SignUp from "../components/auth/SignUp.jsx";
 // 
 export const routes = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-
     children: [
       {
         path: "",
@@ -39,7 +39,7 @@ export const routes = createBrowserRouter([
         children: [
           {
             path: "dashboard",
-            element: < Dashboard />,
+            element: <ProtectedRoute pass={true}> <Dashboard /></ProtectedRoute>,
           },
           {
             path: "sale-panel",
@@ -107,14 +107,17 @@ export const routes = createBrowserRouter([
           },
         ],
       },
-
       {
         path: "auth/",
         element: <Auth />,
         children: [
           {
-            path: "",
+            path: "login",
             element: <Login />,
+          },
+          {
+            path: "register",
+            element: <SignUp />,
           },
           {
             path: "account-recovery",
